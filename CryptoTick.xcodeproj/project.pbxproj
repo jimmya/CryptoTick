@@ -23,8 +23,19 @@
 		BF05F2E51EE92D5100864994 /* CTStatusBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05F2D01EE92D5100864994 /* CTStatusBarButton.swift */; };
 		BF05F2E61EE92D5100864994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF05F2D21EE92D5100864994 /* Assets.xcassets */; };
 		BF05F2E71EE92D5100864994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF05F2D41EE92D5100864994 /* Main.storyboard */; };
+		BF05F3041EE99C1A00864994 /* CryptoTickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05F3031EE99C1A00864994 /* CryptoTickTests.swift */; };
 		EA4449CD4430DE2079E5CCBD /* Pods_CryptoTick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEB55EA6FDCE3D8143E8030 /* Pods_CryptoTick.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF05F3061EE99C1A00864994 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF8701B21EDC749400660587 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF8701B91EDC749400660587;
+			remoteInfo = CryptoTick;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		66996D3A756C385C901B3441 /* Pods-CryptoTick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTick.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoTick/Pods-CryptoTick.release.xcconfig"; sourceTree = "<group>"; };
@@ -46,6 +57,9 @@
 		BF05F2D21EE92D5100864994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF05F2D51EE92D5100864994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF05F2D71EE92D5100864994 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF05F3011EE99C1A00864994 /* CryptoTickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF05F3031EE99C1A00864994 /* CryptoTickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickTests.swift; sourceTree = "<group>"; };
+		BF05F3051EE99C1A00864994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF8701BA1EDC749400660587 /* CryptoTick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC818AEA7CB2CFD84F97BAE2 /* Pods-BTCTicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTCTicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-BTCTicker/Pods-BTCTicker.release.xcconfig"; sourceTree = "<group>"; };
 		DFEB55EA6FDCE3D8143E8030 /* Pods_CryptoTick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoTick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +68,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BF05F2FE1EE99C1A00864994 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF8701B71EDC749400660587 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -178,10 +199,20 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BF05F3021EE99C1A00864994 /* CryptoTickTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF05F3031EE99C1A00864994 /* CryptoTickTests.swift */,
+				BF05F3051EE99C1A00864994 /* Info.plist */,
+			);
+			path = CryptoTickTests;
+			sourceTree = "<group>";
+		};
 		BF8701B11EDC749400660587 = {
 			isa = PBXGroup;
 			children = (
 				BF05F2BB1EE92D5100864994 /* CryptoTick */,
+				BF05F3021EE99C1A00864994 /* CryptoTickTests */,
 				BF8701BB1EDC749400660587 /* Products */,
 				F2BE28F033F447D3AE2B8858 /* Pods */,
 				7E3C63B72E5A4701D98B5A89 /* Frameworks */,
@@ -192,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				BF8701BA1EDC749400660587 /* CryptoTick.app */,
+				BF05F3011EE99C1A00864994 /* CryptoTickTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,6 +242,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BF05F3001EE99C1A00864994 /* CryptoTickTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF05F30A1EE99C1A00864994 /* Build configuration list for PBXNativeTarget "CryptoTickTests" */;
+			buildPhases = (
+				BF05F2FD1EE99C1A00864994 /* Sources */,
+				BF05F2FE1EE99C1A00864994 /* Frameworks */,
+				BF05F2FF1EE99C1A00864994 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF05F3071EE99C1A00864994 /* PBXTargetDependency */,
+			);
+			name = CryptoTickTests;
+			productName = CryptoTickTests;
+			productReference = BF05F3011EE99C1A00864994 /* CryptoTickTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BF8701B91EDC749400660587 /* CryptoTick */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF8701C91EDC749500660587 /* Build configuration list for PBXNativeTarget "CryptoTick" */;
@@ -240,6 +290,11 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Jimmy Arts";
 				TargetAttributes = {
+					BF05F3001EE99C1A00864994 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BF8701B91EDC749400660587;
+					};
 					BF8701B91EDC749400660587 = {
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
@@ -260,11 +315,19 @@
 			projectRoot = "";
 			targets = (
 				BF8701B91EDC749400660587 /* CryptoTick */,
+				BF05F3001EE99C1A00864994 /* CryptoTickTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BF05F2FF1EE99C1A00864994 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF8701B81EDC749400660587 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,6 +388,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BF05F2FD1EE99C1A00864994 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF05F3041EE99C1A00864994 /* CryptoTickTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF8701B61EDC749400660587 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,6 +419,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		BF05F3071EE99C1A00864994 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF8701B91EDC749400660587 /* CryptoTick */;
+			targetProxy = BF05F3061EE99C1A00864994 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		BF05F2D41EE92D5100864994 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -360,6 +439,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BF05F3081EE99C1A00864994 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CryptoTickTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmy.CryptoTickTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CryptoTick.app/Contents/MacOS/CryptoTick";
+			};
+			name = Debug;
+		};
+		BF05F3091EE99C1A00864994 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CryptoTickTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmy.CryptoTickTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CryptoTick.app/Contents/MacOS/CryptoTick";
+			};
+			name = Release;
+		};
 		BF8701C71EDC749500660587 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -485,6 +592,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BF05F30A1EE99C1A00864994 /* Build configuration list for PBXNativeTarget "CryptoTickTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF05F3081EE99C1A00864994 /* Debug */,
+				BF05F3091EE99C1A00864994 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		BF8701B51EDC749400660587 /* Build configuration list for PBXProject "CryptoTick" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -1,0 +1,15 @@
+language: swift
+osx_image: xcode8
+podfile: Podfile
+notifications:
+  email: false
+before_install:
+- gem uninstall cocoapods -a
+- gem install cocoapods
+- gem install xcpretty
+- gem install bundler
+- bundle install
+- bundle exec pod update --project-directory=/
+
+script:
+- xcodebuild test -workspace CryptoTick.xcworkspace -scheme CryptoTick | xcpretty -c && exit ${PIPESTATUS[0]}
