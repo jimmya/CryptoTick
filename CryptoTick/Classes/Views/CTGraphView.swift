@@ -37,9 +37,11 @@ final class CTGraphView: NSView {
             let maxPrice = prices.max() else {
                 return
         }
-        let adjustedMin = max(minPrice - 5, 0)
+        let absoluteRange = maxPrice - minPrice
+        let adjustedMin = max(minPrice - (0.1 * absoluteRange), 0)
+        let adjustedMax = maxPrice + (0.1 * absoluteRange)
     
-        let range = maxPrice - adjustedMin
+        let range = adjustedMax - adjustedMin
         
         let path: NSBezierPath = NSBezierPath()
         path.move(to: NSPoint())
