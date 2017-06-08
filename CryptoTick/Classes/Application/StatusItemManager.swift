@@ -109,6 +109,8 @@ final class StatusItemManager: NSObject {
     }
     
     func selectCoin(sender: CTCoinMenuItem) {
+        coinsMenu.items.forEach({ $0.state = NSOffState })
+        sender.state = NSOnState
         if let shortName = sender.coin?.shortName {
             CurrencyManager.shared.selectedCoin = shortName
         }
