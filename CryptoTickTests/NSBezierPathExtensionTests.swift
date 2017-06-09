@@ -40,7 +40,6 @@ class NSBezierPathExtensionTests: XCTestCase {
         // When
         bezierPath.move(to: CGPoint.zero)
         bezierPath.drawLine(forPoints: points, inRect: rect, range: range!)
-        print(bezierPath)
         
         // Then
         expectedPoints.forEach { (point) in

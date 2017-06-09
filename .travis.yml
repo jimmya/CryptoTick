@@ -1,4 +1,4 @@
-language: objective-c
+language: swift
 osx_image: xcode8
 podfile: Podfile
 notifications:
@@ -8,4 +8,6 @@ before_install:
 - pod install --repo-update
 
 script:
-- xcodebuild test -workspace CryptoTick.xcworkspace -scheme CryptoTick | xcpretty -c && exit ${PIPESTATUS[0]}
+- xcodebuild -workspace CryptoTick.xcworkspace -scheme CryptoTick build test
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

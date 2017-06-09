@@ -12,14 +12,24 @@ import XCTest
 class DoubleExtensionTests: XCTestCase {
     
     func testMaxHeight() {
+        // Given
         let point: Double = 10
+        
+        // When
         let maxHeight = point.maxHeight(inRange: 0...100, withConstraintHeight: 200)
+        
+        // Then
         XCTAssertEqual(maxHeight, 20)
     }
     
     func testMaxHeightOutsideRange() {
+        // Given
         let point: Double = 10
+        
+        // When
         let maxHeight = point.maxHeight(inRange: 20...100, withConstraintHeight: 200)
+        
+        // Then
         XCTAssertEqual(maxHeight, 0)
     }
 }
