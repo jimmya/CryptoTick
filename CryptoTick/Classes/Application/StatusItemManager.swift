@@ -12,10 +12,11 @@ import RxSwift
 final class StatusItemManager: NSObject {
 
     static let shared = StatusItemManager()
-    private let optionsMenuItem = NSMenuItem()
+    private let currenciesMenuItem = NSMenuItem()
     private let coinsMenu = NSMenu()
     private let disposeBag = DisposeBag()
     private var statusView: CTStatusBarView?
+    fileprivate var menuVisible: Bool = false
     
     let statusItem: NSStatusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
     var statusItemFrame: NSRect {
@@ -34,7 +35,7 @@ final class StatusItemManager: NSObject {
                     menuItem.target = self
                     currenciesMenu.addItem(menuItem)
                 }
-                self?.optionsMenuItem.submenu = currenciesMenu
+                self?.currenciesMenuItem.submenu = currenciesMenu
                 }, onError: { (error) in
                     
             }).addDisposableTo(disposeBag)
@@ -42,17 +43,8 @@ final class StatusItemManager: NSObject {
         CurrencyManager.shared.coins
             .asObservable()
             .subscribe(onNext: { [weak self] (coins) in
-                guard let strongSelf = self else {
-                    return
-                }
-                self?.coinsMenu.removeAllItems()
-                for coin in coins {
-                    let menuItem = CTCoinMenuItem(coin: coin, action: #selector(strongSelf.selectCoin(sender:)), keyEquivalent: "")
-                    menuItem.target = strongSelf
-                    if coin.shortName == CurrencyManager.shared.selectedCoin {
-                        menuItem.state = NSOnState
-                    }
-                    self?.coinsMenu.addItem(menuItem)
+                if self?.menuVisible == true {
+                    self?.redrawCoinsMenu()
                 }
                 }, onError: { (error) in
                     
@@ -80,8 +72,20 @@ final class StatusItemManager: NSObject {
         
         let menu = NSMenu()
         menu.delegate = self
+        
+        let optionsMenuItem = NSMenuItem()
         optionsMenuItem.title = "Options"
-        optionsMenuItem.target = self
+        
+        let optionsMenu = NSMenu()
+        currenciesMenuItem.title = "Conversion currency"
+        optionsMenu.addItem(currenciesMenuItem)
+        
+        let graphDurationMenuItem = NSMenuItem()
+        graphDurationMenuItem.title = "Graph duration"
+        optionsMenu.addItem(graphDurationMenuItem)
+        
+        optionsMenuItem.submenu = optionsMenu
+        
         menu.addItem(optionsMenuItem)
         
         menu.addItem(NSMenuItem.separator())
@@ -115,15 +119,30 @@ final class StatusItemManager: NSObject {
             CurrencyManager.shared.selectedCoin = shortName
         }
     }
+    
+    func redrawCoinsMenu() {
+        coinsMenu.removeAllItems()
+        for coin in CurrencyManager.shared.coins.value {
+            let menuItem = CTCoinMenuItem(coin: coin, action: #selector(selectCoin(sender:)), keyEquivalent: "")
+            menuItem.target = self
+            if coin.shortName == CurrencyManager.shared.selectedCoin {
+                menuItem.state = NSOnState
+            }
+            coinsMenu.addItem(menuItem)
+        }
+    }
 }
 
 extension StatusItemManager: NSMenuDelegate {
     
     func menuWillOpen(_ menu: NSMenu) {
+        menuVisible = true
+        redrawCoinsMenu()
         statusItem.drawStatusBarBackground(in: statusItemFrame, withHighlight: true)
     }
     
     func menuDidClose(_ menu: NSMenu) {
+        menuVisible = false
         statusItem.drawStatusBarBackground(in: statusItemFrame, withHighlight: false)
     }
 }

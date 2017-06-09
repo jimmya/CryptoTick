@@ -8,6 +8,6 @@ before_install:
 - pod install --repo-update
 
 script:
-- xcodebuild -workspace CryptoTick.xcworkspace -scheme CryptoTick build test | xcpretty -c && exit ${PIPESTATUS[0]}
+- xcodebuild -workspace CryptoTick.xcworkspace -scheme CryptoTick build test
 after_success:
   - bash <(curl -s https://codecov.io/bash)

@@ -10,19 +10,17 @@ import Cocoa
 
 final class CTStatusBarView: NSView {
     
-    let graphView: CTGraphView
+    let graphView = CTGraphView()
     var onMouseDown: (() -> Void)?
     
     override init(frame frameRect: NSRect) {
-        graphView = CTGraphView(frame: frameRect)
         super.init(frame: frameRect)
+        graphView.frame = frameRect
         addSubview(graphView)
     }
     
     required init?(coder: NSCoder) {
-        graphView = CTGraphView()
-        super.init(coder: coder)
-        addSubview(graphView)
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func mouseDown(with event: NSEvent) {
