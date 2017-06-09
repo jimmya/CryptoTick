@@ -23,7 +23,12 @@
 		BF05F2E51EE92D5100864994 /* CTStatusBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05F2D01EE92D5100864994 /* CTStatusBarButton.swift */; };
 		BF05F2E61EE92D5100864994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF05F2D21EE92D5100864994 /* Assets.xcassets */; };
 		BF05F2E71EE92D5100864994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF05F2D41EE92D5100864994 /* Main.storyboard */; };
-		BF05F3041EE99C1A00864994 /* CryptoTickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05F3031EE99C1A00864994 /* CryptoTickTests.swift */; };
+		BF05F30D1EEA96DF00864994 /* NSBezierPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05F30C1EEA96DF00864994 /* NSBezierPath+Extension.swift */; };
+		BF05F3101EEA970000864994 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05F30F1EEA970000864994 /* Array+Extension.swift */; };
+		BF05F3121EEAA30100864994 /* NSBezierPathExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05F3111EEAA30100864994 /* NSBezierPathExtensionTests.swift */; };
+		BF05F3141EEAA30C00864994 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05F3131EEAA30B00864994 /* Double+Extension.swift */; };
+		BF05F3161EEAA72800864994 /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05F3151EEAA72800864994 /* ArrayExtensionTests.swift */; };
+		BF05F3181EEAA8D600864994 /* DoubleExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05F3171EEAA8D600864994 /* DoubleExtensionTests.swift */; };
 		EA4449CD4430DE2079E5CCBD /* Pods_CryptoTick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEB55EA6FDCE3D8143E8030 /* Pods_CryptoTick.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,8 +63,13 @@
 		BF05F2D51EE92D5100864994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF05F2D71EE92D5100864994 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF05F3011EE99C1A00864994 /* CryptoTickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF05F3031EE99C1A00864994 /* CryptoTickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickTests.swift; sourceTree = "<group>"; };
 		BF05F3051EE99C1A00864994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF05F30C1EEA96DF00864994 /* NSBezierPath+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+Extension.swift"; sourceTree = "<group>"; };
+		BF05F30F1EEA970000864994 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		BF05F3111EEAA30100864994 /* NSBezierPathExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBezierPathExtensionTests.swift; sourceTree = "<group>"; };
+		BF05F3131EEAA30B00864994 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		BF05F3151EEAA72800864994 /* ArrayExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTests.swift; sourceTree = "<group>"; };
+		BF05F3171EEAA8D600864994 /* DoubleExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtensionTests.swift; sourceTree = "<group>"; };
 		BF8701BA1EDC749400660587 /* CryptoTick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC818AEA7CB2CFD84F97BAE2 /* Pods-BTCTicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTCTicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-BTCTicker/Pods-BTCTicker.release.xcconfig"; sourceTree = "<group>"; };
 		DFEB55EA6FDCE3D8143E8030 /* Pods_CryptoTick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoTick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +141,9 @@
 		BF05F2C11EE92D5100864994 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BF05F30C1EEA96DF00864994 /* NSBezierPath+Extension.swift */,
+				BF05F3131EEAA30B00864994 /* Double+Extension.swift */,
+				BF05F30F1EEA970000864994 /* Array+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,7 +215,9 @@
 		BF05F3021EE99C1A00864994 /* CryptoTickTests */ = {
 			isa = PBXGroup;
 			children = (
-				BF05F3031EE99C1A00864994 /* CryptoTickTests.swift */,
+				BF05F3111EEAA30100864994 /* NSBezierPathExtensionTests.swift */,
+				BF05F3151EEAA72800864994 /* ArrayExtensionTests.swift */,
+				BF05F3171EEAA8D600864994 /* DoubleExtensionTests.swift */,
 				BF05F3051EE99C1A00864994 /* Info.plist */,
 			);
 			path = CryptoTickTests;
@@ -392,7 +407,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF05F3041EE99C1A00864994 /* CryptoTickTests.swift in Sources */,
+				BF05F3181EEAA8D600864994 /* DoubleExtensionTests.swift in Sources */,
+				BF05F3121EEAA30100864994 /* NSBezierPathExtensionTests.swift in Sources */,
+				BF05F3161EEAA72800864994 /* ArrayExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,13 +421,16 @@
 				BF05F2E01EE92D5100864994 /* History.swift in Sources */,
 				BF05F2DF1EE92D5100864994 /* Global.swift in Sources */,
 				BF05F2DD1EE92D5100864994 /* Currency.swift in Sources */,
+				BF05F3141EEAA30C00864994 /* Double+Extension.swift in Sources */,
 				BF05F2DA1EE92D5100864994 /* StatusItemManager.swift in Sources */,
 				BF05F2D91EE92D5100864994 /* CurrencyManager.swift in Sources */,
 				BF05F2DB1EE92D5100864994 /* CoinCapAPI.swift in Sources */,
+				BF05F3101EEA970000864994 /* Array+Extension.swift in Sources */,
 				BF05F2DC1EE92D5100864994 /* Coin.swift in Sources */,
 				BF05F2E41EE92D5100864994 /* CTGraphView.swift in Sources */,
 				BF05F2DE1EE92D5100864994 /* DataPoint.swift in Sources */,
 				BF05F2E21EE92D5100864994 /* YahooAPI.swift in Sources */,
+				BF05F30D1EEA96DF00864994 /* NSBezierPath+Extension.swift in Sources */,
 				BF05F2E51EE92D5100864994 /* CTStatusBarButton.swift in Sources */,
 				BF05F2E31EE92D5100864994 /* CTCoinMenuItem.swift in Sources */,
 				BF05F2D81EE92D5100864994 /* AppDelegate.swift in Sources */,
@@ -599,6 +619,7 @@
 				BF05F3091EE99C1A00864994 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF8701B51EDC749400660587 /* Build configuration list for PBXProject "CryptoTick" */ = {
 			isa = XCConfigurationList;

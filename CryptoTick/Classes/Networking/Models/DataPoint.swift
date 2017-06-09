@@ -20,5 +20,3 @@ final class DataPoint {
         self.value = value
     }
 }
-
-
