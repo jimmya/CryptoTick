@@ -16,7 +16,7 @@ final class StatusItemManager: NSObject {
     private let coinsMenu = NSMenu()
     private let disposeBag = DisposeBag()
     private var statusView: CTStatusBarView?
-    fileprivate var menuVisible: Bool = false
+    fileprivate var coinsDisposable: Disposable?
     
     let statusItem: NSStatusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
     var statusItemFrame: NSRect {
@@ -36,16 +36,6 @@ final class StatusItemManager: NSObject {
                     currenciesMenu.addItem(menuItem)
                 }
                 self?.currenciesMenuItem.submenu = currenciesMenu
-                }, onError: { (error) in
-                    
-            }).addDisposableTo(disposeBag)
-        
-        CurrencyManager.shared.coins
-            .asObservable()
-            .subscribe(onNext: { [weak self] (coins) in
-                if self?.menuVisible == true {
-                    self?.redrawCoinsMenu()
-                }
                 }, onError: { (error) in
                     
             }).addDisposableTo(disposeBag)
@@ -131,18 +121,28 @@ final class StatusItemManager: NSObject {
             coinsMenu.addItem(menuItem)
         }
     }
+    
+    func addCoinsObserver() {
+        coinsDisposable = CurrencyManager.shared.coins
+            .asObservable()
+            .subscribe(onNext: { [weak self] (coins) in
+                self?.redrawCoinsMenu()
+                }, onError: { (error) in
+                    
+            })
+    }
 }
 
 extension StatusItemManager: NSMenuDelegate {
     
     func menuWillOpen(_ menu: NSMenu) {
-        menuVisible = true
-        redrawCoinsMenu()
+        addCoinsObserver()
         statusItem.drawStatusBarBackground(in: statusItemFrame, withHighlight: true)
     }
     
     func menuDidClose(_ menu: NSMenu) {
-        menuVisible = false
+        coinsDisposable?.dispose()
+        coinsDisposable = nil
         statusItem.drawStatusBarBackground(in: statusItemFrame, withHighlight: false)
     }
 }
