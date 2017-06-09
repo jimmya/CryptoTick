@@ -5,7 +5,7 @@ notifications:
   email: false
 before_install:
 - gem install cocoapods
-- pod install
+- pod install --repo-update
 
 script:
 - xcodebuild test -workspace CryptoTick.xcworkspace -scheme CryptoTick | xcpretty -c && exit ${PIPESTATUS[0]}
