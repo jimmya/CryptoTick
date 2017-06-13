@@ -151,8 +151,8 @@
 		BF05F2C21EE92D5100864994 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				BF05F2C31EE92D5100864994 /* CoinCapAPI.swift */,
 				BF05F2C41EE92D5100864994 /* Models */,
+				BF05F2C31EE92D5100864994 /* CoinCapAPI.swift */,
 				BF05F2CB1EE92D5100864994 /* YahooAPI.swift */,
 			);
 			path = Networking;

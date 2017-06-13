@@ -46,7 +46,7 @@ final class CurrencyManager {
     }
     
     private let disposeBag = DisposeBag()
-    private let socket = SocketIOClient(socketURL: URL(string: "http://socket.coincap.io")!, config: [.forcePolling(true)])
+    private let socket = SocketIOClient(socketURL: URL(string: "http://socket.coincap.io")!)
     
     init() {
         
